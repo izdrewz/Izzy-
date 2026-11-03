@@ -9,6 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const supportList = document.getElementById("support-list");
   const rewardsPanel = document.getElementById("rewards");
   const nextStep = document.getElementById("next-step");
+  const sections = [...document.querySelectorAll("main section[id]")];
+  const navLinks = [...document.querySelectorAll(".nav-link")];
+
+  document.addEventListener("pointermove", (event) => {
+    document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+  });
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+      });
+    },
+    { rootMargin: "-25% 0px -60% 0px" }
+  );
+  sections.forEach((section) => sectionObserver.observe(section));
 
   function showResult(container, message) {
     container.replaceChildren();
