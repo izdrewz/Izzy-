@@ -42,7 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
       sourceId.textContent = `ID: ${id}`;
       const sourceType = document.createElement("p");
       sourceType.textContent = source.source_type.toUpperCase();
-      card.append(title, sourceId, sourceType);
+      const useSource = document.createElement("button");
+      useSource.type = "button";
+      useSource.className = "source-action";
+      useSource.textContent = "Use in essay →";
+      useSource.addEventListener("click", () => {
+        const sourceInput = document.getElementById("paragraph-sources");
+        const currentIds = sourceInput.value.split(",").map((item) => item.trim()).filter(Boolean);
+        if (!currentIds.includes(id)) currentIds.push(id);
+        sourceInput.value = currentIds.join(", ");
+        document.getElementById("essay").scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById("paragraph-text").focus();
+        nextStep.textContent = "Write one claim, then link it to the highlighted source.";
+      });
+      card.append(title, sourceId, sourceType, useSource);
       sourcesList.appendChild(card);
     });
   }

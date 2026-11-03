@@ -3,79 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scholar's Quest Study Companion</title>
+    <title>Scholar's Quest | Focused study workspace</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Scholar's Quest</h1>
-      <h2>Guided study support for focused essay writing</h2>
-    </header>
-
-    <main>
-      <section>
-        <h3>Sources Vault (PDF + notes)</h3>
-        <form id="source-form">
-          <div class="form-group">
-            <label for="source-title">Source title</label>
-            <input id="source-title" required placeholder="e.g. Norman Conquest chapter" />
-          </div>
-          <div class="form-group">
-            <label for="source-content">Key text from source</label>
-            <textarea id="source-content" rows="4" required placeholder="Paste key quotes/context from your PDF"></textarea>
-          </div>
-          <button type="submit">Add Source</button>
-        </form>
-        <div id="sources-list" class="stack"></div>
-      </section>
-
-      <section>
-        <h3>Essay Forge</h3>
-        <form id="paragraph-form">
-          <div class="form-group">
-            <label for="paragraph-text">Paragraph draft</label>
-            <textarea id="paragraph-text" rows="5" required placeholder="Write one paragraph at a time"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="paragraph-sources">Linked source IDs (comma separated)</label>
-            <input id="paragraph-sources" required placeholder="src-xxxx, src-yyyy" />
-          </div>
-          <button type="submit">Link Paragraph to Sources</button>
-        </form>
-        <div id="paragraph-result" class="stack"></div>
-      </section>
-
-      <section>
-        <h3>Exam Quest Board</h3>
-        <form id="exam-form">
-          <div class="form-group">
-            <label for="exam-question">Exam question</label>
-            <textarea id="exam-question" rows="3" required placeholder="Paste your exam question"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exam-guidance">Teacher guidance (optional)</label>
-            <input id="exam-guidance" placeholder="e.g. include context in every paragraph" />
-          </div>
-          <button type="submit">Generate Skeleton + Checklist</button>
-        </form>
-        <div id="exam-result" class="stack"></div>
-      </section>
-
-      <section>
-        <h3>Support & Rewards</h3>
-        <button id="refresh-support" type="button">Get Writing Support</button>
-        <div id="support-list" class="stack"></div>
-        <div id="rewards" class="stack"></div>
-        <div id="next-step" class="info">
-          Next step: add one source first, then write one paragraph.
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">✦ YOUR FOCUSED STUDY SPACE ✦</p>
+          <h1>Make progress, one clear step at a time.</h1>
+          <p class="hero-subtitle">A little moonlit room for turning sources into confident essays and exam answers.</p>
         </div>
-      </section>
-    </main>
+        <div class="hero-mark" aria-hidden="true">✦</div>
+      </header>
 
-    <footer>
-      <p>&copy; 2026 Scholar's Quest</p>
-    </footer>
+      <div class="workspace">
+        <aside class="sidebar">
+          <div class="brand"><span class="brand-icon">S</span><span>Scholar's Quest</span></div>
+          <nav aria-label="Workspace sections">
+            <a class="nav-link active" href="#sources"><span>▣</span> Sources vault</a>
+            <a class="nav-link" href="#essay"><span>✎</span> Essay forge</a>
+            <a class="nav-link" href="#exam"><span>◈</span> Exam quest</a>
+            <a class="nav-link" href="#support"><span>♡</span> Support</a>
+          </nav>
+          <div class="sidebar-note">
+            <span class="note-icon">✦</span>
+            <strong>Small steps count.</strong>
+            <p>Keep your next action simple and achievable.</p>
+          </div>
+        </aside>
 
+        <main class="content">
+          <div class="content-heading">
+            <div>
+              <p class="eyebrow">✦ TODAY'S WORKSPACE</p>
+              <h2>Let's build something brilliant.</h2>
+            </div>
+            <div id="next-step" class="next-step"><span>Next up</span> Add your first source</div>
+          </div>
+
+          <section id="sources" class="panel panel-wide">
+            <div class="panel-heading">
+              <div class="section-icon purple">▣</div>
+              <div><h3>Sources vault</h3><p>Collect the evidence that powers your writing.</p></div>
+              <span class="panel-count">01 / 04</span>
+            </div>
+            <form id="source-form" class="source-form">
+              <div class="form-group">
+                <label for="source-title">Source title</label>
+                <input id="source-title" required placeholder="e.g. Norman Conquest chapter" />
+              </div>
+              <div class="form-group grow">
+                <label for="source-content">Key text or notes</label>
+                <textarea id="source-content" rows="2" required placeholder="Paste a quote, key idea, or context from your PDF"></textarea>
+              </div>
+              <button type="submit" class="button primary">Add source <span>＋</span></button>
+            </form>
+            <div id="sources-list" class="source-grid"></div>
+          </section>
+
+          <div class="two-column">
+            <section id="essay" class="panel">
+              <div class="panel-heading">
+                <div class="section-icon orange">✎</div>
+                <div><h3>Essay forge</h3><p>Turn evidence into a strong paragraph.</p></div>
+              </div>
+              <form id="paragraph-form">
+                <div class="form-group">
+                  <label for="paragraph-text">Your paragraph</label>
+                  <textarea id="paragraph-text" rows="6" required placeholder="Start with one claim. You can build from there."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="paragraph-sources">Source IDs <span class="label-hint">comma separated</span></label>
+                  <input id="paragraph-sources" required placeholder="src-xxxx, src-yyyy" />
+                </div>
+                <button type="submit" class="button primary full">Link paragraph <span>→</span></button>
+              </form>
+              <div id="paragraph-result" class="result"></div>
+            </section>
+
+            <section id="exam" class="panel">
+              <div class="panel-heading">
+                <div class="section-icon teal">◈</div>
+                <div><h3>Exam quest</h3><p>Turn a question into a clear plan.</p></div>
+              </div>
+              <form id="exam-form">
+                <div class="form-group">
+                  <label for="exam-question">Exam question</label>
+                  <textarea id="exam-question" rows="4" required placeholder="Paste your exam question"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exam-guidance">Teacher guidance <span class="label-hint">optional</span></label>
+                  <input id="exam-guidance" placeholder="e.g. include context in every paragraph" />
+                </div>
+                <button type="submit" class="button primary full">Build my plan <span>→</span></button>
+              </form>
+              <div id="exam-result" class="result"></div>
+            </section>
+          </div>
+
+          <section id="support" class="panel support-panel">
+            <div class="panel-heading">
+              <div class="section-icon pink">♡</div>
+              <div><h3>Support & rewards</h3><p>Get a gentle prompt when you need momentum.</p></div>
+              <button id="refresh-support" class="button secondary" type="button">Give me a prompt <span>✦</span></button>
+            </div>
+            <div class="support-layout">
+              <div id="support-list" class="support-message"><p>Your next step will appear here.</p></div>
+              <div id="rewards" class="rewards"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <footer>Built for focused learners · <span>Scholar's Quest</span></footer>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
