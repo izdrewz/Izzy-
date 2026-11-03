@@ -3,46 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
+    <title>Scholar's Quest Study Companion</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <h1>Scholar's Quest</h1>
+      <h2>Guided study support for focused essay writing</h2>
     </header>
 
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
-        </div>
+      <section>
+        <h3>Sources Vault (PDF + notes)</h3>
+        <form id="source-form">
+          <div class="form-group">
+            <label for="source-title">Source title</label>
+            <input id="source-title" required placeholder="e.g. Norman Conquest chapter" />
+          </div>
+          <div class="form-group">
+            <label for="source-content">Key text from source</label>
+            <textarea id="source-content" rows="4" required placeholder="Paste key quotes/context from your PDF"></textarea>
+          </div>
+          <button type="submit">Add Source</button>
+        </form>
+        <div id="sources-list" class="stack"></div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+      <section>
+        <h3>Essay Forge</h3>
+        <form id="paragraph-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <label for="paragraph-text">Paragraph draft</label>
+            <textarea id="paragraph-text" rows="5" required placeholder="Write one paragraph at a time"></textarea>
           </div>
           <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
-            </select>
+            <label for="paragraph-sources">Linked source IDs (comma separated)</label>
+            <input id="paragraph-sources" required placeholder="src-xxxx, src-yyyy" />
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Link Paragraph to Sources</button>
         </form>
-        <div id="message" class="hidden"></div>
+        <div id="paragraph-result" class="stack"></div>
+      </section>
+
+      <section>
+        <h3>Exam Quest Board</h3>
+        <form id="exam-form">
+          <div class="form-group">
+            <label for="exam-question">Exam question</label>
+            <textarea id="exam-question" rows="3" required placeholder="Paste your exam question"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exam-guidance">Teacher guidance (optional)</label>
+            <input id="exam-guidance" placeholder="e.g. include context in every paragraph" />
+          </div>
+          <button type="submit">Generate Skeleton + Checklist</button>
+        </form>
+        <div id="exam-result" class="stack"></div>
+      </section>
+
+      <section>
+        <h3>Support & Rewards</h3>
+        <button id="refresh-support" type="button">Get Writing Support</button>
+        <div id="support-list" class="stack"></div>
+        <div id="rewards" class="stack"></div>
+        <div id="next-step" class="info">
+          Next step: add one source first, then write one paragraph.
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2023 Mergington High School</p>
+      <p>&copy; 2026 Scholar's Quest</p>
     </footer>
 
     <script src="app.js"></script>
