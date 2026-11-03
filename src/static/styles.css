@@ -18,7 +18,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--ink);
-  background: #e7e4d8 url("castle-cover.png") center top / cover fixed no-repeat;
+  background: #e7e4d8 url("manuscript-desktop.png") center top / cover fixed no-repeat;
   font: 14px/1.5 "DM Sans", sans-serif;
 }
 body::before {
@@ -139,7 +139,7 @@ footer span { color: var(--red); }
 @media (max-width: 650px) { .hero { min-height: 620px; } .hero-stamp { position: absolute; right: 20px; top: 20px; } .content { padding: 28px 16px; } .content-heading { display: block; } .next-step { margin-top: 15px; } .two-column, .support-layout { grid-template-columns: 1fr; } .source-form { display: block; } .source-form .button { width: 100%; } }
 
 /* Home and room pages keep the same world, but each has a single job. */
-.home-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(242,239,226,.86), rgba(242,239,226,.47)), url("castle-cover.png") center / cover fixed; }
+.home-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(247,243,229,.48), rgba(247,243,229,.2)), url("manuscript-desktop.png") center / cover fixed; }
 .home-hero { min-height: 68vh; padding: 9vw 10%; display: flex; align-items: flex-end; justify-content: space-between; color: var(--ink); border-bottom: 1px solid rgba(0,0,0,.35); }
 .home-copy { max-width: 680px; }
 .home-copy h1 { margin: 0; color: var(--ink); text-shadow: 2px 2px 0 #fff; font: 700 clamp(52px, 8vw, 105px)/.86 "UnifrakturCook", cursive; }
@@ -149,11 +149,11 @@ footer span { color: var(--red); }
 .home-intro { margin-bottom: 30px; }
 .home-intro h2 { margin: 0; font: 700 34px "UnifrakturCook", cursive; }
 .area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.area-card { min-height: 260px; padding: 28px; display: flex; flex-direction: column; position: relative; color: var(--paper-bright); border: 1px solid rgba(255,255,255,.4); text-decoration: none; overflow: hidden; transition: transform .25s, box-shadow .25s; }
-.area-card::before { content: ""; position: absolute; inset: 0; opacity: .46; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.35), transparent 16%), linear-gradient(140deg, rgba(0,0,0,.7), transparent); }
+.area-card { min-height: 260px; padding: 28px; display: flex; flex-direction: column; position: relative; color: var(--ink); border: 2px solid #fff; box-shadow: 3px 3px 0 #656565; text-decoration: none; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.area-card::before { content: ""; position: absolute; inset: 0; opacity: .18; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.9), transparent 16%), repeating-linear-gradient(0deg, transparent 0 3px, rgba(80,60,30,.08) 4px); }
 .area-card > * { position: relative; z-index: 1; }
-.area-card:hover { transform: translateY(-7px) rotate(-.5deg); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
-.area-sources, .area-essay, .area-exam, .area-support { background: rgba(247,243,229,.92); }
+.area-card:hover { transform: translateY(-7px) rotate(-.5deg); box-shadow: 7px 10px 0 #656565; }
+.area-sources, .area-essay, .area-exam, .area-support { background: rgba(247,243,229,.84); }
 .area-card:hover { border-color: #c6b89e; }
 .area-number { font: 9px "Press Start 2P", monospace; color: #b7a58c; }
 .area-glyph { margin: 25px 0 4px; font-size: 32px; color: var(--paper); }
@@ -161,7 +161,7 @@ footer span { color: var(--red); }
 .area-card p { max-width: 260px; margin: 12px 0 20px; color: #4a4741; }
 .area-open { margin-top: auto; color: var(--blue); font: 9px "Press Start 2P", monospace; }
 
-.page-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(242,239,226,.86), rgba(242,239,226,.47)), url("castle-cover.png") center / cover fixed; }
+.page-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(247,243,229,.48), rgba(247,243,229,.2)), url("manuscript-desktop.png") center / cover fixed; }
 .page-header { max-width: 1100px; margin: auto; padding: 7vw 7% 55px; color: var(--ink); }
 .back-link { display: inline-block; margin-bottom: 50px; color: var(--paper); font: 10px "Press Start 2P", monospace; text-decoration: none; }
 .back-link:hover { color: var(--red); }
