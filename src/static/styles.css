@@ -138,3 +138,43 @@ footer span { color: var(--red); }
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 900px) { .sidebar { display: none; } .hero { min-height: 650px; padding: 40px 7%; } .hero-stamp { margin-right: 0; } }
 @media (max-width: 650px) { .hero { min-height: 620px; } .hero-stamp { position: absolute; right: 20px; top: 20px; } .content { padding: 28px 16px; } .content-heading { display: block; } .next-step { margin-top: 15px; } .two-column, .support-layout { grid-template-columns: 1fr; } .source-form { display: block; } .source-form .button { width: 100%; } }
+
+/* Home and room pages keep the same world, but each has a single job. */
+.home-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(7,8,11,.86), rgba(7,8,11,.42)), url("castle-cover.png") center / cover fixed; }
+.home-hero { min-height: 68vh; padding: 9vw 10%; display: flex; align-items: flex-end; justify-content: space-between; color: var(--paper-bright); border-bottom: 1px solid rgba(255,255,255,.35); }
+.home-copy { max-width: 680px; }
+.home-copy h1 { margin: 0; color: var(--paper-bright); text-shadow: 4px 4px 0 var(--red); font: 700 clamp(52px, 8vw, 105px)/.86 "UnifrakturCook", cursive; }
+.home-copy > p:not(.eyebrow) { max-width: 430px; margin: 26px 0 0; color: #e5e0d4; font-size: 17px; }
+.home-sigil { padding: 15px; color: var(--red); border: 2px solid var(--red); transform: rotate(-8deg); font: 28px/1 "UnifrakturCook", cursive; }
+.home-main { max-width: 1200px; margin: auto; padding: 70px 7%; color: var(--paper-bright); }
+.home-intro { margin-bottom: 30px; }
+.home-intro h2 { margin: 0; font: 700 34px "UnifrakturCook", cursive; }
+.area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.area-card { min-height: 260px; padding: 28px; display: flex; flex-direction: column; position: relative; color: var(--paper-bright); border: 1px solid rgba(255,255,255,.4); text-decoration: none; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.area-card::before { content: ""; position: absolute; inset: 0; opacity: .46; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.35), transparent 16%), linear-gradient(140deg, rgba(0,0,0,.7), transparent); }
+.area-card > * { position: relative; z-index: 1; }
+.area-card:hover { transform: translateY(-7px) rotate(-.5deg); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.area-sources { background: linear-gradient(135deg, #1d3eaf, #10152a); }
+.area-essay { background: linear-gradient(135deg, #8e2924, #261317); }
+.area-exam { background: linear-gradient(135deg, #1c7847, #101c20); }
+.area-support { background: linear-gradient(135deg, #5c3a9d, #171325); }
+.area-number { font: 9px "Press Start 2P", monospace; color: var(--red); }
+.area-glyph { margin: 25px 0 4px; font-size: 32px; color: var(--paper); }
+.area-card h3 { margin: 0; font: 700 33px "UnifrakturCook", cursive; }
+.area-card p { max-width: 260px; margin: 12px 0 20px; color: #e4dfd5; }
+.area-open { margin-top: auto; color: var(--paper); font: 9px "Press Start 2P", monospace; }
+
+.page-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(7,8,11,.88), rgba(7,8,11,.52)), url("castle-cover.png") center / cover fixed; }
+.page-header { max-width: 1100px; margin: auto; padding: 7vw 7% 55px; color: var(--paper-bright); }
+.back-link { display: inline-block; margin-bottom: 50px; color: var(--paper); font: 10px "Press Start 2P", monospace; text-decoration: none; }
+.back-link:hover { color: var(--red); }
+.page-header h1 { margin: 0; text-shadow: 4px 4px 0 var(--red); font: 700 clamp(48px, 7vw, 90px)/.9 "UnifrakturCook", cursive; }
+.page-header > p:not(.eyebrow) { margin: 20px 0 0; color: #e2ddd3; font-size: 16px; }
+.page-content { max-width: 1100px; margin: auto; padding: 0 7% 80px; display: grid; gap: 24px; }
+.page-content .panel { background: rgba(15,16,20,.78); color: var(--paper-bright); }
+.page-content .panel-heading p { color: #bdb8ae; }
+.page-content label { color: var(--paper); }
+.page-content .result { color: #ddd5c7; }
+.page-content .source-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.page-content .support-message { margin-top: 22px; }
+@media (max-width: 650px) { .home-hero { min-height: 72vh; padding: 45px 8%; } .area-grid { grid-template-columns: 1fr; } .home-sigil { align-self: flex-start; } .page-header { padding: 35px 7% 45px; } }

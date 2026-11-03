@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderRewards(dashboard.rewards);
   }
 
-  sourceForm.addEventListener("submit", async (event) => {
+  sourceForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const title = document.getElementById("source-title").value.trim();
     const content = document.getElementById("source-content").value.trim();
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  paragraphForm.addEventListener("submit", async (event) => {
+  paragraphForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const text = document.getElementById("paragraph-text").value.trim();
     const sourceIds = document
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  examForm.addEventListener("submit", async (event) => {
+  examForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const question = document.getElementById("exam-question").value.trim();
     const guidance = document.getElementById("exam-guidance").value.trim();
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  refreshSupportButton.addEventListener("click", async () => {
+  refreshSupportButton?.addEventListener("click", async () => {
     try {
       const result = await requestJson("/support/suggestions");
       supportList.replaceChildren();
@@ -196,7 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  refreshDashboard().catch((error) => {
-    showResult(sourcesList, error.message);
-  });
+  if (sourcesList || rewardsPanel) {
+    refreshDashboard().catch((error) => {
+      if (sourcesList) showResult(sourcesList, error.message);
+    });
+  }
 });

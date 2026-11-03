@@ -3,122 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scholar's Quest | Focused study workspace</title>
+    <title>Scholar's Quest</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="app-shell">
-      <header class="hero">
-        <div class="cover-noise" aria-hidden="true"></div>
-        <div class="hero-copy">
-          <p class="eyebrow">SCHOLAR'S QUEST / STUDY SPACE</p>
-          <h1>Read deeply.<br />Write clearly.</h1>
-          <p class="hero-subtitle">Sources, writing support, and exam planning in one focused space.</p>
-          <a class="hero-cta" href="#sources">Open workspace <span>↘</span></a>
+  <body class="home-page">
+    <div class="home-shell">
+      <header class="home-hero">
+        <div class="home-copy">
+          <p class="eyebrow">SCHOLAR'S QUEST / HOME</p>
+          <h1>A quieter way<br />to study.</h1>
+          <p>Keep your sources, writing, exam plans, and support in separate rooms.</p>
         </div>
-        <div class="hero-stamp" aria-hidden="true">MAKE<br />YOUR<br />LORE</div>
+        <div class="home-sigil" aria-hidden="true">SQ</div>
       </header>
-
-      <div class="workspace">
-        <aside class="sidebar">
-          <div class="brand"><span class="brand-icon">S</span><span>Scholar's Quest</span></div>
-          <nav aria-label="Workspace sections">
-            <a class="nav-link active" href="#sources"><span>▣</span> Sources vault</a>
-            <a class="nav-link" href="#essay"><span>✎</span> Essay forge</a>
-            <a class="nav-link" href="#exam"><span>◈</span> Exam quest</a>
-            <a class="nav-link" href="#support"><span>♡</span> Support</a>
-          </nav>
-          <div class="sidebar-note">
-            <span class="note-icon">✦</span>
-            <strong>Small steps count.</strong>
-            <p>Keep your next action simple and achievable.</p>
-          </div>
-        </aside>
-
-        <main class="content">
-          <div class="content-heading">
-            <div>
-              <p class="eyebrow">WORKSPACE</p>
-              <h2>What are you working on?</h2>
-            </div>
-            <div id="next-step" class="next-step"><span>LIVE QUEST</span> Add your first source</div>
-          </div>
-
-          <section id="sources" class="panel panel-wide">
-            <div class="panel-heading">
-              <div class="section-icon purple">▣</div>
-              <div><h3>Sources vault</h3><p>Collect the evidence that powers your writing.</p></div>
-              <span class="panel-count">01 / SOURCES</span>
-            </div>
-            <form id="source-form" class="source-form">
-              <div class="form-group">
-                <label for="source-title">Source title</label>
-                <input id="source-title" required placeholder="e.g. Norman Conquest chapter" />
-              </div>
-              <div class="form-group grow">
-                <label for="source-content">Key text or notes</label>
-                <textarea id="source-content" rows="2" required placeholder="Paste a quote, key idea, or context from your PDF"></textarea>
-              </div>
-              <button type="submit" class="button primary">Add source <span>＋</span></button>
-            </form>
-            <div id="sources-list" class="source-grid"></div>
-          </section>
-
-          <div class="two-column">
-            <section id="essay" class="panel">
-              <div class="panel-heading">
-                <div class="section-icon orange">✎</div>
-                <div><h3>Essay forge</h3><p>Turn evidence into a strong paragraph.</p></div>
-              </div>
-              <form id="paragraph-form">
-                <div class="form-group">
-                  <label for="paragraph-text">Your paragraph</label>
-                  <textarea id="paragraph-text" rows="6" required placeholder="Start with one claim. You can build from there."></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="paragraph-sources">Source IDs <span class="label-hint">comma separated</span></label>
-                  <input id="paragraph-sources" required placeholder="src-xxxx, src-yyyy" />
-                </div>
-                <button type="submit" class="button primary full">Link paragraph <span>→</span></button>
-              </form>
-              <div id="paragraph-result" class="result"></div>
-            </section>
-
-            <section id="exam" class="panel">
-              <div class="panel-heading">
-                <div class="section-icon teal">◈</div>
-                <div><h3>Exam quest</h3><p>Turn a question into a clear plan.</p></div>
-              </div>
-              <form id="exam-form">
-                <div class="form-group">
-                  <label for="exam-question">Exam question</label>
-                  <textarea id="exam-question" rows="4" required placeholder="Paste your exam question"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="exam-guidance">Teacher guidance <span class="label-hint">optional</span></label>
-                  <input id="exam-guidance" placeholder="e.g. include context in every paragraph" />
-                </div>
-                <button type="submit" class="button primary full">Build my plan <span>→</span></button>
-              </form>
-              <div id="exam-result" class="result"></div>
-            </section>
-          </div>
-
-          <section id="support" class="panel support-panel">
-            <div class="panel-heading">
-              <div class="section-icon pink">♡</div>
-              <div><h3>Support & rewards</h3><p>Get a gentle prompt when you need momentum.</p></div>
-              <button id="refresh-support" class="button secondary" type="button">Give me a prompt <span>✦</span></button>
-            </div>
-            <div class="support-layout">
-              <div id="support-list" class="support-message"><p>Your next step will appear here.</p></div>
-              <div id="rewards" class="rewards"></div>
-            </div>
-          </section>
-        </main>
-      </div>
-      <footer>Built for focused learners · <span>Scholar's Quest</span></footer>
+      <main class="home-main">
+        <div class="home-intro">
+          <p class="eyebrow">YOUR STUDY SPACE</p>
+          <h2>Where would you like to go?</h2>
+        </div>
+        <div class="area-grid">
+          <a class="area-card area-sources" href="sources.html">
+            <span class="area-number">01</span><span class="area-glyph">▣</span>
+            <h3>Sources</h3><p>Collect and revisit the material behind your work.</p><span class="area-open">Open room ↗</span>
+          </a>
+          <a class="area-card area-essay" href="essay.html">
+            <span class="area-number">02</span><span class="area-glyph">✎</span>
+            <h3>Essay writing</h3><p>Build paragraphs with evidence and context close by.</p><span class="area-open">Open room ↗</span>
+          </a>
+          <a class="area-card area-exam" href="exam.html">
+            <span class="area-number">03</span><span class="area-glyph">◈</span>
+            <h3>Exam planning</h3><p>Turn a question into a practical structure.</p><span class="area-open">Open room ↗</span>
+          </a>
+          <a class="area-card area-support" href="support.html">
+            <span class="area-number">04</span><span class="area-glyph">♡</span>
+            <h3>Support</h3><p>Get a prompt, see your progress, and choose one next step.</p><span class="area-open">Open room ↗</span>
+          </a>
+        </div>
+      </main>
+      <footer>Scholar's Quest · home</footer>
     </div>
-    <script src="app.js"></script>
   </body>
 </html>
