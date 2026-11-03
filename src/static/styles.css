@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Press+Start+2P&family=UnifrakturCook:wght@700&display=swap");
 
 :root {
-  --black: #080808;
-  --ink: #171513;
-  --paper: #efe3c9;
-  --paper-bright: #fff8e9;
-  --red: #ed3028;
-  --blue: #2048d8;
-  --green: #28a45a;
+  --black: #202020;
+  --ink: #1b1b1b;
+  --paper: #d7d4c8;
+  --paper-bright: #fffdf2;
+  --red: #9c2926;
+  --blue: #183f9e;
+  --green: #466d4f;
+  --chrome: #c6c6c6;
+  --chrome-dark: #686868;
   --line: rgba(8, 8, 8, .28);
 }
 
@@ -16,7 +18,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--ink);
-  background: #101113 url("castle-cover.png") center top / cover fixed no-repeat;
+  background: #e7e4d8 url("castle-cover.png") center top / cover fixed no-repeat;
   font: 14px/1.5 "DM Sans", sans-serif;
 }
 body::before {
@@ -35,7 +37,7 @@ button { cursor: pointer; }
   max-width: 1500px;
   margin: auto;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(5,6,9,.24), rgba(5,6,9,.76) 58%, rgba(5,6,9,.88));
+  background: linear-gradient(180deg, rgba(235,232,218,.35), rgba(235,232,218,.86) 58%, rgba(235,232,218,.94));
 }
 
 .hero {
@@ -48,7 +50,7 @@ button { cursor: pointer; }
   overflow: hidden;
   color: var(--paper-bright);
   border-bottom: 5px solid var(--red);
-  background: linear-gradient(90deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.43) 48%, rgba(0,0,0,.18) 100%);
+  background: linear-gradient(90deg, rgba(244,239,222,.92) 0%, rgba(244,239,222,.63) 48%, rgba(244,239,222,.18) 100%);
 }
 .hero::before {
   content: "";
@@ -61,42 +63,39 @@ button { cursor: pointer; }
 .cover-noise { position: absolute; inset: 0; opacity: .13; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"); mix-blend-mode: screen; }
 .hero-copy { max-width: 700px; position: relative; z-index: 1; }
 .eyebrow { margin: 0 0 15px; color: var(--red); font: 10px/1.8 "Press Start 2P", monospace; letter-spacing: 1px; }
-.hero h1 { margin: 0; color: var(--paper-bright); text-shadow: 5px 5px 0 var(--red); font: 700 clamp(46px, 7vw, 94px)/.87 "UnifrakturCook", cursive; }
-.hero-subtitle { max-width: 450px; margin: 28px 0 24px; color: #e5e0d4; font-size: 17px; }
-.hero-cta { display: inline-flex; gap: 18px; align-items: center; padding: 14px 18px; color: var(--paper-bright); background: rgba(15,18,26,.55); border: 1px solid var(--paper-bright); box-shadow: 0 8px 26px rgba(0,0,0,.22); backdrop-filter: blur(8px); font: 10px "Press Start 2P", monospace; text-decoration: none; }
-.hero-cta:hover { color: var(--black); background: var(--paper); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+.hero h1 { margin: 0; color: var(--ink); text-shadow: 2px 2px 0 rgba(255,255,255,.8); font: 700 clamp(46px, 7vw, 94px)/.87 "UnifrakturCook", cursive; }
+.hero-subtitle { max-width: 450px; margin: 28px 0 24px; color: #373737; font-size: 17px; }
+.hero-cta { display: inline-flex; gap: 18px; align-items: center; padding: 14px 18px; color: var(--paper-bright); background: var(--blue); border: 2px outset #d9e3ff; box-shadow: 3px 3px 0 var(--black); font: 10px "Press Start 2P", monospace; text-decoration: none; }
+.hero-cta:hover { color: var(--paper-bright); background: #2857bd; transform: translateY(-2px); box-shadow: 5px 5px 0 var(--black); }
 .hero-cta span { font-size: 19px; line-height: 0; }
 .hero-stamp { align-self: flex-start; margin: 20px 4% 0 0; padding: 12px 10px; color: var(--red); border: 3px solid var(--red); transform: rotate(9deg); font: 18px/1.15 "UnifrakturCook", cursive; text-align: center; }
 
 .workspace { display: flex; }
-.sidebar { width: 220px; min-height: 800px; padding: 30px 20px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start; color: var(--paper); background: rgba(8,8,9,.78); border-right: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(15px); }
+.sidebar { width: 220px; min-height: 800px; padding: 30px 20px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start; color: var(--ink); background: var(--chrome); border-right: 3px outset #efefef; }
 .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 50px; font-weight: 700; }
 .brand-icon { display: grid; place-items: center; width: 32px; height: 32px; color: var(--paper-bright); background: var(--red); font: 700 18px "UnifrakturCook", cursive; }
 nav { display: grid; gap: 6px; }
-.nav-link { display: flex; gap: 12px; align-items: center; padding: 12px 10px; color: #929292; border-left: 4px solid transparent; text-decoration: none; }
+.nav-link { display: flex; gap: 12px; align-items: center; padding: 12px 10px; color: #333; border: 2px solid transparent; text-decoration: none; }
 .nav-link span { width: 18px; color: var(--blue); text-align: center; }
-.nav-link.active, .nav-link:hover { color: var(--paper-bright); background: #222; border-left-color: var(--red); }
-.sidebar-note { margin-top: 110px; padding: 15px; border: 1px solid #444; background: #151515; }
+.nav-link.active, .nav-link:hover { color: #fff; background: var(--blue); border: 2px inset #8aa0d4; }
+.sidebar-note { margin-top: 110px; padding: 15px; border: 2px inset #efefef; background: #e9e7dc; }
 .note-icon { display: block; margin-bottom: 8px; color: var(--green); font-size: 20px; }
 .sidebar-note strong { font: 9px "Press Start 2P", monospace; }
-.sidebar-note p { margin: 10px 0 0; color: #9a9a9a; font-size: 11px; }
+.sidebar-note p { margin: 10px 0 0; color: #555; font-size: 11px; }
 
-.content { width: min(1140px, 100%); padding: 50px 5%; color: var(--paper-bright); background: rgba(10,11,14,.62); backdrop-filter: blur(7px); }
+.content { width: min(1140px, 100%); padding: 50px 5%; color: var(--ink); background: rgba(238,235,222,.84); }
 .content-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 32px; }
 .content-heading h2 { margin: 0; font: 700 34px "UnifrakturCook", cursive; }
 .content-heading .eyebrow { color: var(--blue); }
-.next-step { padding: 11px 15px; color: var(--paper-bright); background: var(--blue); border: 2px solid var(--black); box-shadow: 4px 4px 0 var(--black); font-size: 12px; }
+.next-step { padding: 11px 15px; color: #fff; background: var(--blue); border: 2px outset #dce5ff; box-shadow: 3px 3px 0 var(--black); font-size: 12px; }
 .next-step span { margin-right: 7px; color: var(--red); font: 9px "Press Start 2P", monospace; }
-.panel { padding: 26px; background: rgba(21,23,29,.72); border: 1px solid rgba(244,234,212,.28); box-shadow: 0 18px 45px rgba(0,0,0,.22); backdrop-filter: blur(14px); animation: rise-in .7s both; }
+.panel { padding: 26px; background: var(--paper-bright); border: 2px outset #fff; box-shadow: 3px 3px 0 var(--chrome-dark); animation: rise-in .7s both; }
 .panel-wide { margin-bottom: 28px; }
 .panel-heading { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; }
 .panel-heading h3 { margin: 0; font: 700 24px "UnifrakturCook", cursive; }
-.panel-heading p { margin: 3px 0 0; color: #bdb8ae; font-size: 12px; }
+.panel-heading p { margin: 3px 0 0; color: #666; font-size: 12px; }
 .section-icon { display: grid; place-items: center; width: 40px; height: 40px; color: var(--paper-bright); border: 2px solid var(--black); font-size: 18px; }
-.section-icon.purple { background: #704bd8; }
-.section-icon.orange { background: var(--red); }
-.section-icon.teal { background: var(--green); }
-.section-icon.pink { background: var(--blue); }
+.section-icon.purple, .section-icon.orange, .section-icon.teal, .section-icon.pink { background: #3a3b3b; }
 .panel-count { margin-left: auto; color: var(--red); font: 9px "Press Start 2P", monospace; }
 .source-form { display: flex; align-items: end; gap: 14px; padding-bottom: 24px; border-bottom: 2px dashed #aaa69b; }
 .source-form .form-group { flex: 1; }
@@ -105,17 +104,17 @@ nav { display: grid; gap: 6px; }
 .form-group { margin-bottom: 16px; }
 label { display: block; margin-bottom: 8px; color: var(--paper); font: 10px/1.7 "Press Start 2P", monospace; }
 .label-hint { color: #77736a; font: 11px "DM Sans", sans-serif; }
-input, textarea { width: 100%; padding: 12px; color: var(--paper-bright); background: rgba(8,9,12,.58); border: 1px solid rgba(244,234,212,.3); outline: 0; resize: vertical; }
-input:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(32,72,216,.25); }
+input, textarea { width: 100%; padding: 12px; color: var(--ink); background: #fff; border: 2px inset #fff; outline: 0; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,63,158,.2); }
 input::placeholder, textarea::placeholder { color: #817a6e; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 16px; border: 1px solid rgba(244,234,212,.5); font: 10px "Press Start 2P", monospace; transition: .2s; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 16px; border: 2px outset #e8e8e8; font: 10px "Press Start 2P", monospace; transition: .2s; }
 .button span { font-size: 17px; line-height: 0; }
-.button:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
-.button.primary { color: var(--paper-bright); background: rgba(237,48,40,.8); }
+.button:hover { transform: translateY(-2px); box-shadow: 2px 2px 0 var(--black); }
+.button.primary { color: #fff; background: var(--blue); }
 .button.secondary { margin-left: auto; color: var(--paper-bright); background: var(--blue); }
 .full { width: 100%; }
 .source-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; margin-top: 24px; }
-.activity-card { padding: 15px; background: rgba(239,227,201,.95); border: 1px solid var(--black); box-shadow: 0 7px 16px rgba(0,0,0,.2); }
+.activity-card { padding: 15px; background: var(--paper); border: 2px outset #fff; box-shadow: 2px 2px 0 var(--chrome-dark); }
 .activity-card h4 { margin: 0 0 9px; font: 700 18px "UnifrakturCook", cursive; }
 .activity-card p { margin: 3px 0; color: #5f5a51; font-size: 11px; }
 .activity-card p:last-child { display: inline-block; margin-top: 9px; padding: 4px 7px; color: var(--paper-bright); background: var(--green); font: 8px "Press Start 2P", monospace; }
@@ -127,9 +126,9 @@ input::placeholder, textarea::placeholder { color: #817a6e; }
 .result ol li::marker { color: var(--red); font-weight: 700; }
 .support-panel { margin-bottom: 20px; }
 .support-layout { display: grid; grid-template-columns: 1fr 250px; gap: 20px; }
-.support-message { min-height: 76px; padding: 16px; color: #332f2a; background: rgba(229,216,186,.94); border: 1px solid var(--black); }
+.support-message { min-height: 76px; padding: 16px; color: #332f2a; background: var(--paper); border: 2px inset #fff; }
 .support-message ul { margin: 0; padding-left: 20px; }
-.rewards { padding: 16px; color: var(--paper-bright); background: rgba(8,8,8,.72); border: 1px solid var(--red); }
+.rewards { padding: 16px; color: var(--ink); background: #e9e4d3; border: 2px outset #fff; }
 .rewards p { margin: 3px 0; font-size: 12px; }
 .rewards p:first-child { color: var(--green); font: 20px "Press Start 2P", monospace; }
 footer { padding: 25px; color: #888; background: var(--black); text-align: center; font: 9px "Press Start 2P", monospace; }
@@ -140,13 +139,13 @@ footer span { color: var(--red); }
 @media (max-width: 650px) { .hero { min-height: 620px; } .hero-stamp { position: absolute; right: 20px; top: 20px; } .content { padding: 28px 16px; } .content-heading { display: block; } .next-step { margin-top: 15px; } .two-column, .support-layout { grid-template-columns: 1fr; } .source-form { display: block; } .source-form .button { width: 100%; } }
 
 /* Home and room pages keep the same world, but each has a single job. */
-.home-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(7,8,11,.86), rgba(7,8,11,.42)), url("castle-cover.png") center / cover fixed; }
-.home-hero { min-height: 68vh; padding: 9vw 10%; display: flex; align-items: flex-end; justify-content: space-between; color: var(--paper-bright); border-bottom: 1px solid rgba(255,255,255,.35); }
+.home-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(242,239,226,.86), rgba(242,239,226,.47)), url("castle-cover.png") center / cover fixed; }
+.home-hero { min-height: 68vh; padding: 9vw 10%; display: flex; align-items: flex-end; justify-content: space-between; color: var(--ink); border-bottom: 1px solid rgba(0,0,0,.35); }
 .home-copy { max-width: 680px; }
-.home-copy h1 { margin: 0; color: var(--paper-bright); text-shadow: 4px 4px 0 var(--red); font: 700 clamp(52px, 8vw, 105px)/.86 "UnifrakturCook", cursive; }
-.home-copy > p:not(.eyebrow) { max-width: 430px; margin: 26px 0 0; color: #e5e0d4; font-size: 17px; }
+.home-copy h1 { margin: 0; color: var(--ink); text-shadow: 2px 2px 0 #fff; font: 700 clamp(52px, 8vw, 105px)/.86 "UnifrakturCook", cursive; }
+.home-copy > p:not(.eyebrow) { max-width: 430px; margin: 26px 0 0; color: #373737; font-size: 17px; }
 .home-sigil { padding: 15px; color: var(--red); border: 2px solid var(--red); transform: rotate(-8deg); font: 28px/1 "UnifrakturCook", cursive; }
-.home-main { max-width: 1200px; margin: auto; padding: 70px 7%; color: var(--paper-bright); }
+.home-main { max-width: 1200px; margin: auto; padding: 70px 7%; color: var(--ink); }
 .home-intro { margin-bottom: 30px; }
 .home-intro h2 { margin: 0; font: 700 34px "UnifrakturCook", cursive; }
 .area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -154,27 +153,25 @@ footer span { color: var(--red); }
 .area-card::before { content: ""; position: absolute; inset: 0; opacity: .46; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.35), transparent 16%), linear-gradient(140deg, rgba(0,0,0,.7), transparent); }
 .area-card > * { position: relative; z-index: 1; }
 .area-card:hover { transform: translateY(-7px) rotate(-.5deg); box-shadow: 0 18px 40px rgba(0,0,0,.35); }
-.area-sources { background: linear-gradient(135deg, #1d3eaf, #10152a); }
-.area-essay { background: linear-gradient(135deg, #8e2924, #261317); }
-.area-exam { background: linear-gradient(135deg, #1c7847, #101c20); }
-.area-support { background: linear-gradient(135deg, #5c3a9d, #171325); }
-.area-number { font: 9px "Press Start 2P", monospace; color: var(--red); }
+.area-sources, .area-essay, .area-exam, .area-support { background: rgba(247,243,229,.92); }
+.area-card:hover { border-color: #c6b89e; }
+.area-number { font: 9px "Press Start 2P", monospace; color: #b7a58c; }
 .area-glyph { margin: 25px 0 4px; font-size: 32px; color: var(--paper); }
-.area-card h3 { margin: 0; font: 700 33px "UnifrakturCook", cursive; }
-.area-card p { max-width: 260px; margin: 12px 0 20px; color: #e4dfd5; }
-.area-open { margin-top: auto; color: var(--paper); font: 9px "Press Start 2P", monospace; }
+.area-card h3 { margin: 0; color: var(--ink); font: 700 33px "UnifrakturCook", cursive; }
+.area-card p { max-width: 260px; margin: 12px 0 20px; color: #4a4741; }
+.area-open { margin-top: auto; color: var(--blue); font: 9px "Press Start 2P", monospace; }
 
-.page-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(7,8,11,.88), rgba(7,8,11,.52)), url("castle-cover.png") center / cover fixed; }
-.page-header { max-width: 1100px; margin: auto; padding: 7vw 7% 55px; color: var(--paper-bright); }
+.page-shell { min-height: 100vh; background: linear-gradient(90deg, rgba(242,239,226,.86), rgba(242,239,226,.47)), url("castle-cover.png") center / cover fixed; }
+.page-header { max-width: 1100px; margin: auto; padding: 7vw 7% 55px; color: var(--ink); }
 .back-link { display: inline-block; margin-bottom: 50px; color: var(--paper); font: 10px "Press Start 2P", monospace; text-decoration: none; }
 .back-link:hover { color: var(--red); }
-.page-header h1 { margin: 0; text-shadow: 4px 4px 0 var(--red); font: 700 clamp(48px, 7vw, 90px)/.9 "UnifrakturCook", cursive; }
-.page-header > p:not(.eyebrow) { margin: 20px 0 0; color: #e2ddd3; font-size: 16px; }
+.page-header h1 { margin: 0; text-shadow: 3px 3px 0 rgba(0,0,0,.7); font: 700 clamp(48px, 7vw, 90px)/.9 "UnifrakturCook", cursive; }
+.page-header > p:not(.eyebrow) { margin: 20px 0 0; color: #373737; font-size: 16px; }
 .page-content { max-width: 1100px; margin: auto; padding: 0 7% 80px; display: grid; gap: 24px; }
-.page-content .panel { background: rgba(15,16,20,.78); color: var(--paper-bright); }
-.page-content .panel-heading p { color: #bdb8ae; }
-.page-content label { color: var(--paper); }
-.page-content .result { color: #ddd5c7; }
+.page-content .panel { background: rgba(255,253,242,.9); color: var(--ink); }
+.page-content .panel-heading p { color: #666; }
+.page-content label { color: var(--ink); }
+.page-content .result { color: #3d3a35; }
 .page-content .source-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
 .page-content .support-message { margin-top: 22px; }
 @media (max-width: 650px) { .home-hero { min-height: 72vh; padding: 45px 8%; } .area-grid { grid-template-columns: 1fr; } .home-sigil { align-self: flex-start; } .page-header { padding: 35px 7% 45px; } }
